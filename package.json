@@ -1,0 +1,60 @@
+{
+  "name": "c-cpp-create-new-file",
+  "displayName": "C/Cpp New File",
+  "description": "Create new C/Cpp file in File--New File prompt.",
+  "version": "3.7.10",
+  "publisher": "Insdf",
+  "repository": "https://github.com/Insdf/C-Cpp-New-File",
+  "engines": {
+    "vscode": "^1.82.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+				"command": "cpp.createNewFile",
+				"title": "Cpp: New Cpp File",
+        "shortTitle":"Cpp File"
+      },
+      {
+        "command": "c.createNewFile",
+				"title": "C: New C File",
+        "shortTitle":"C File"
+      },
+      {
+        "command": "h.createNewFile",
+				"title": "Header: New Header File",
+        "shortTitle":"Header File"
+      }
+    ],
+    "menus": {
+      "file/newFile":[
+        {
+          "command": "cpp.createNewFile",
+          "group": "file@1"
+        },
+        {
+          "command": "c.createNewFile",
+          "group": "file@3"
+        },
+        {
+          "command": "h.createNewFile",
+          "group": "file@2"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.82.0",
+    "typescript": "^5.1.6"
+  }
+}
